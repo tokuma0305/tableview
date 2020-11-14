@@ -35,11 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
         itemCount: 10000,
         itemBuilder: (context, index) {
-          if ((index + 1) ~/ 10 % 2 == 0) {
+          if ((index + 1) ~/ 10 % 4 == 0) {
             return Text("uni" * ((index+1) % 10));
-          } else {
-            return Text("uni" * (10 - ((index+1) % 10));
-            }
+          } else if((index + 1) ~/ 10 % 4 == 1){
+            return Text("uni" * (10 - ((index+1) % 10)));
+            } else if((index + 1) ~/ 10 % 4 == 2){
+            return Text("uni" * ((index+1) % 10) * 2);
+          } else{
+            return Text("uni" * (10 - ((index+1) % 10)) * 2);
+          }
         },
       ),
     );
